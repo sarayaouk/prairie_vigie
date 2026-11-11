@@ -30,5 +30,5 @@ Fichiers diffusables
 
 Fichiers internes, jamais diffusés : caches, tous les .parquet (dont *_PRIVE), fichiers *_INTERNE.csv.
 
-- Notebook 5 : indice_vulnerabilite_test.csv (test de l'indice de vulnérabilité communal suggéré par un expert : corrélation de Spearman avec les conversions 2024→25, gain face à l'historique, intervalle à 95 %, décision)
+- Notebook 5 : indice_vulnerabilite_test.csv (test de l'indice de vulnérabilité communal : corrélation de Spearman avec les conversions 2024→25, gain face à l'historique, intervalle à 95 %, décision)
 - Notebook 5 : indice_pression_fourragere_test.csv (test exploratoire d'un indice fondé sur le maïs déclaré, d'après les études Agreste Normandie 2021 et DRAAF Bretagne 2025 : corrélations, gain face à l'historique, décision)
