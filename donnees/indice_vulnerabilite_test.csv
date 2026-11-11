@@ -1,0 +1,7 @@
+methode,communes,spearman,gain_vs_historique,ic95_bas,ic95_haut,adopte
+taux_conv_2019_2023,1983,0.291,,,,
+indice_expert,1983,0.127,-0.164,-0.203,-0.126,False
+indice_sans_historique,1983,0.018,,,,
+faible_part_pp,1983,0.033,,,,
+recul_pp_2019_2023,1983,0.161,,,,
+proximite_cereales,1983,-0.15,,,,

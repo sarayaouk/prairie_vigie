@@ -1,0 +1,6 @@
+methode,communes,spearman,gain_vs_historique,ic95_bas,ic95_haut,adopte
+taux_conv_2019_2023,1983,0.291,,,,
+indice_pression_fourragere,1983,0.315,0.023,-0.008,0.061,False
+pression_sans_historique,1983,0.24,,,,
+part_mais_2023,1983,0.314,,,,
+hausse_mais_2019_2023,1983,0.079,,,,
