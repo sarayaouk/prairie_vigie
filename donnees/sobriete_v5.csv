@@ -1,0 +1,2 @@
+perimetre,duree_min,energie_kwh,emissions_g_co2e,outil
+"notebook 3 seul, données RPG déjà en cache (téléchargements des notebooks 1 et 2 non inclus)",5.7,0.0014,0.23,CodeCarbon (estimation)

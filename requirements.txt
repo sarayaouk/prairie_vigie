@@ -1,0 +1,12 @@
+# Prairie Vigie – bibliothèques Python, versions utilisées lors de l'exécution complète du 11/11/2026
+# (Google Colab, Python 3.13 ; copie de donnees/versions_bibliotheques.txt, écrit par le notebook 3)
+numpy==2.4.6
+pandas==2.2.3
+geopandas==1.2.0
+shapely==2.2.0
+pyogrio==0.13.0
+pyarrow==23.0.1
+scikit-learn==1.6.1
+matplotlib==3.10.0
+requests==2.32.4
+codecarbon==3.3.2
