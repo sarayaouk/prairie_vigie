@@ -33,12 +33,12 @@ La carte répond à trois questions :
 ## Les chiffres clés
 
 - **Environ 49 700 hectares** de prairies convertis en cultures entre 2019 et 2025, pour seulement **4 630 hectares** recréés :
-  près de **11 hectares perdus pour 1 regagné**. Sept hectares convertis sur dix deviennent du maïs.
+  près de **11 hectares perdus pour 1 regagné**. Sept prairies converties sur dix deviennent du maïs.
 - **Nos totaux sont fiables** : ils ne s'écartent que de +0,5 % (2018) et +0,4 % (2025) des surfaces officielles.
 - **Le modèle aide à cibler les prairies** : dans les 10 % de prairies qu'il signale, on retrouve 25,8 % des conversions
   survenues deux ans plus tard, contre 17,3 % en regardant seulement le passé du secteur.
-- **Mais pour comparer les communes entre elles, le passé suffit** : là, le modèle ne fait pas mieux que l'historique.
-  La carte publique montre donc l'historique observé, plus simple et tout aussi fiable.
+- **Le modèle sert donc à choisir les prairies à protéger.** Pour comparer les communes, en revanche, il suffit de regarder
+  ce qui s'y est passé ces dernières années : c'est ce que la carte montre pour chaque commune.
 - **12 354 hectares prioritaires** (6 488 prairies), soit environ 2 % des prairies normandes, cumulent un risque élevé et au
   moins un enjeu pour l'eau ou la biodiversité. Dont 6 466 hectares (2 885 prairies) avec au moins deux enjeux.
 
@@ -47,7 +47,7 @@ La carte répond à trois questions :
 - **La carte** : le lien ci-dessus, ou le fichier `carte/prairie_vigie.html` à ouvrir dans un navigateur.
 - **Les tableaux** : les fichiers `.csv` du dossier `donnees/` s'ouvrent dans un tableur (Excel, LibreOffice, Google Sheets).
   Chaque fichier et chaque colonne sont expliqués dans `donnees/DICTIONNAIRE_DES_DONNEES.md`.
-- **Pour un logiciel de cartographie (un SIG, « système d’information géographique », comme QGIS)** : `donnees/communes.geojson`, `intercos.geojson` et `mailles10km.geojson`.
+- **Pour un logiciel de cartographie** (un SIG, « système d'information géographique », comme QGIS, gratuit) : `donnees/communes.geojson`, `intercos.geojson` et `mailles10km.geojson`.
 
 Il n'est utile de relancer les calculs que pour les vérifier, ou pour les mettre à jour quand une nouvelle année de
 déclarations PAC est publiée.
@@ -97,12 +97,12 @@ conversions présumées.
 
 ## Ce que nous avons testé et écarté
 
-Nous avons construit un **indice de vulnérabilité par commune**. Nous l'avons testé avec une
+Un expert nous a suggéré de construire un **indice de vulnérabilité par commune**. Nous l'avons testé honnêtement, avec une
 règle écrite **avant** de voir le résultat : un indice n'est retenu que s'il repère mieux les communes touchées en 2025 que
 le simple historique, avec une marge d'au moins 0,05 (sur une échelle où 1 serait un classement parfait).
 
-- **Première version** (peu de prairies, recul récent, conversions passées, proximité des grandes
-  cultures) : 0,13 contre 0,29 pour l'historique. **Non retenu.** : être près des grandes cultures ne rend pas les
+- **Notre version de l'idée de l'expert** (peu de prairies, recul récent, conversions passées, proximité des grandes
+  cultures) : 0,13 contre 0,29 pour l'historique. **Non retenu.** Surprise : être près des grandes cultures ne rend pas les
   prairies plus menacées.
 - **Un indice tiré des études régionales** (Agreste Normandie 2021, DRAAF Bretagne 2025), fondé sur le **maïs**, nourriture des
   élevages laitiers : 0,32, à peine mieux que l'historique, sous la marge exigée. **Non retenu.**
@@ -125,13 +125,15 @@ Toutes les données sont publiques et ouvertes.
 
 ## Données personnelles : ce que nous protégeons
 
+Le règlement du datathon (article 9) interdit les données personnelles. Concrètement :
+
 - Des déclarations PAC, nous ne lisons que la forme de la parcelle et sa culture. **Aucun identifiant d'agriculteur** n'est lu
   ni conservé.
 - La carte publique s'arrête à la commune. Rien n'est affiché pour moins de 5 prairies.
 - Les prédictions ne sont publiées qu'à l'échelle des intercommunalités et des carrés de 10 km. Le classement prairie par
-  prairie n'est jamais publié.
+  prairie n'est jamais publié : il est réservé à un partenaire qui accompagnerait les agriculteurs.
 - Les fichiers de travail détaillés (dossiers `cache_…`, fichiers `.parquet`, `_PRIVE`, `_INTERNE`) restent sur le Drive de
-  l'équipe et ne sont jamais mis en ligne.
+  l'équipe et ne sont jamais mis en ligne. Le dossier publié est vérifié automatiquement avant diffusion.
 
 ## Ce qu'il faut savoir avant d'utiliser les chiffres
 
@@ -160,3 +162,5 @@ bien qu'un modèle plus lourd.
 
 - Code : licence MIT (`LICENSE`).
 - Données produites et documentation : Licence Ouverte 2.0 (`LICENSE-DONNEES.md`).
+
+En cas de réutilisation, merci de citer : « Prairie Vigie, Datathon Normandie 2026, d'après le RPG (IGN) ».
