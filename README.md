@@ -97,12 +97,12 @@ conversions présumées.
 
 ## Ce que nous avons testé et écarté
 
-Un expert nous a suggéré de construire un **indice de vulnérabilité par commune**. Nous l'avons testé honnêtement, avec une
+Nous avons construit un **indice de vulnérabilité par commune**. Nous l'avons testé avec une
 règle écrite **avant** de voir le résultat : un indice n'est retenu que s'il repère mieux les communes touchées en 2025 que
 le simple historique, avec une marge d'au moins 0,05 (sur une échelle où 1 serait un classement parfait).
 
-- **Notre version de l'idée de l'expert** (peu de prairies, recul récent, conversions passées, proximité des grandes
-  cultures) : 0,13 contre 0,29 pour l'historique. **Non retenu.** Surprise : être près des grandes cultures ne rend pas les
+- **Première version** (peu de prairies, recul récent, conversions passées, proximité des grandes
+  cultures) : 0,13 contre 0,29 pour l'historique. **Non retenu.** : être près des grandes cultures ne rend pas les
   prairies plus menacées.
 - **Un indice tiré des études régionales** (Agreste Normandie 2021, DRAAF Bretagne 2025), fondé sur le **maïs**, nourriture des
   élevages laitiers : 0,32, à peine mieux que l'historique, sous la marge exigée. **Non retenu.**
@@ -125,15 +125,13 @@ Toutes les données sont publiques et ouvertes.
 
 ## Données personnelles : ce que nous protégeons
 
-Le règlement du datathon (article 9) interdit les données personnelles. Concrètement :
-
 - Des déclarations PAC, nous ne lisons que la forme de la parcelle et sa culture. **Aucun identifiant d'agriculteur** n'est lu
   ni conservé.
 - La carte publique s'arrête à la commune. Rien n'est affiché pour moins de 5 prairies.
 - Les prédictions ne sont publiées qu'à l'échelle des intercommunalités et des carrés de 10 km. Le classement prairie par
-  prairie n'est jamais publié : il est réservé à un partenaire qui accompagnerait les agriculteurs.
+  prairie n'est jamais publié.
 - Les fichiers de travail détaillés (dossiers `cache_…`, fichiers `.parquet`, `_PRIVE`, `_INTERNE`) restent sur le Drive de
-  l'équipe et ne sont jamais mis en ligne. Le dossier publié est vérifié automatiquement avant diffusion.
+  l'équipe et ne sont jamais mis en ligne.
 
 ## Ce qu'il faut savoir avant d'utiliser les chiffres
 
@@ -162,5 +160,3 @@ bien qu'un modèle plus lourd.
 
 - Code : licence MIT (`LICENSE`).
 - Données produites et documentation : Licence Ouverte 2.0 (`LICENSE-DONNEES.md`).
-
-En cas de réutilisation, merci de citer : « Prairie Vigie, Datathon Normandie 2026, d'après le RPG (IGN) ».
