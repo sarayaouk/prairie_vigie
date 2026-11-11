@@ -6,8 +6,7 @@ Prairie Vigie est une carte en ligne qui montre, commune par commune, où les pr
 en cultures depuis 2019, et où agir en priorité pour la campagne 2027. Elle s'adresse aux intercommunalités, aux syndicats
 d'eau, aux parcs naturels, aux services de l'État et aux associations.
 
-Projet réalisé pour le Datathon Normandie 2026 (« Biodiversité et activité humaine en Normandie ») par
-**Sara CHEKLAT et Mariem GAALICHE**, Master 2 « Apprentissage automatique pour l'IA », Université de Rouen Normandie.
+Projet réalisé pour le Datathon Normandie 2026 (« Biodiversité et activité humaine en Normandie »).
 
 👉 **Voir la carte : https://sarayaouk.github.io/prairie_vigie/carte/prairie_vigie.html**
 
@@ -97,14 +96,14 @@ conversions présumées.
 
 ## Ce que nous avons testé et écarté
 
-Un expert nous a suggéré de construire un **indice de vulnérabilité par commune**. Nous l'avons testé honnêtement, avec une
+Nous avons aussi essayé de construire un **indice de vulnérabilité par commune**. Nous l'avons testé honnêtement, avec une
 règle écrite **avant** de voir le résultat : un indice n'est retenu que s'il repère mieux les communes touchées en 2025 que
 le simple historique, avec une marge d'au moins 0,05 (sur une échelle où 1 serait un classement parfait).
 
-- **Notre version de l'idée de l'expert** (peu de prairies, recul récent, conversions passées, proximité des grandes
+- **Premier essai** (peu de prairies, recul récent, conversions passées, proximité des grandes
   cultures) : 0,13 contre 0,29 pour l'historique. **Non retenu.** Surprise : être près des grandes cultures ne rend pas les
   prairies plus menacées.
-- **Un indice tiré des études régionales** (Agreste Normandie 2021, DRAAF Bretagne 2025), fondé sur le **maïs**, nourriture des
+- **Second essai, tiré des études régionales** (Agreste Normandie 2021, DRAAF Bretagne 2025), fondé sur le **maïs**, nourriture des
   élevages laitiers : 0,32, à peine mieux que l'historique, sous la marge exigée. **Non retenu.**
 - **Ce que nous en retenons** : la part de maïs dans une commune suffit à prédire aussi bien que l'historique (0,31). La
   pression sur les prairies vient surtout de l'élevage laitier du bocage, comme le décrivent ces études. Ce test est
