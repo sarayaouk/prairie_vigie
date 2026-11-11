@@ -47,7 +47,7 @@ La carte répond à trois questions :
 - **La carte** : le lien ci-dessus, ou le fichier `carte/prairie_vigie.html` à ouvrir dans un navigateur.
 - **Les tableaux** : les fichiers `.csv` du dossier `donnees/` s'ouvrent dans un tableur (Excel, LibreOffice, Google Sheets).
   Chaque fichier et chaque colonne sont expliqués dans `donnees/DICTIONNAIRE_DES_DONNEES.md`.
-- **Pour un SIG** (QGIS…) : `donnees/communes.geojson`, `intercos.geojson` et `mailles10km.geojson`.
+- **Pour un logiciel de cartographie (un SIG, « système d’information géographique », comme QGIS)** : `donnees/communes.geojson`, `intercos.geojson` et `mailles10km.geojson`.
 
 Il n'est utile de relancer les calculs que pour les vérifier, ou pour les mettre à jour quand une nouvelle année de
 déclarations PAC est publiée.
