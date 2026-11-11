@@ -140,7 +140,7 @@ table.t td.win { font-weight: 600; color: var(--accent); }
   <aside class="panel" aria-label="Lecture de la carte">
     <header class="brand">
       <h1>Prairie <span>Vigie</span></h1>
-      <p>Conversions présumées de prairies permanentes en cultures en Normandie, campagnes 2019 à 2025, et secteurs où agir avant la campagne 2027.</p>
+      <p>Où disparaissent les prairies de Normandie, et lesquelles protéger en premier ? D'après les déclarations PAC de 2019 à 2025.</p>
     </header>
 
     <section>
@@ -159,7 +159,7 @@ table.t td.win { font-weight: 600; color: var(--accent); }
         <option value="zh">Zones humides</option>
         <option value="ca">Aires de captage d'eau potable</option>
         <option value="n2">Habitats Natura 2000</option>
-        <option value="hb">Contour bordé de haies</option>
+        <option value="hb">Prairies bordées de haies</option>
       </select>
       <input type="search" id="q" list="names" placeholder="Chercher une commune ou une interco" aria-label="Chercher une commune ou une interco" autocomplete="off">
       <datalist id="names"></datalist>
@@ -173,36 +173,23 @@ table.t td.win { font-weight: 600; color: var(--accent); }
     </section>
 
     <section id="region">
-      <p class="label">Normandie · hectares de prairies permanentes converties par campagne (conversions présumées)</p>
+      <p class="label">Normandie · hectares de prairies devenues des champs, par année</p>
       <svg class="bars" id="regchart" viewBox="0 0 360 150" role="img" aria-label="Hectares convertis et créés par campagne en Normandie"></svg>
-      <div class="legend-inline"><span><i class="sw" style="background:var(--soil-3)"></i>convertis</span><span><i class="sw" style="background:var(--accent)"></i>créés</span></div>
-      <p class="foot" style="margin:6px 0 0">* 2023→24 : campagne marquée par le régime d'interdiction de retournement, annoncé fin octobre 2023 puis levé rétroactivement au 1er janvier 2024 (arrêté du 25 novembre 2024) ; l'hiver 2023-2024 a aussi été très pluvieux. 4 120 ha observés contre 10 290 attendus (intervalle à 90 % : 9 870 – 10 710), puis remontée à 7 700 ha en 2024→25.</p>
+      <div class="legend-inline"><span><i class="sw" style="background:var(--soil-3)"></i>convertis</span><span><i class="sw" style="background:var(--accent)"></i>recréés</span></div>
+      <p class="foot" style="margin:6px 0 0">* 2023→24 : année d'interdiction de retourner les prairies (annulée ensuite) et d'hiver très pluvieux : 2,5 fois moins de conversions que prévu.</p>
     </section>
 
     <details id="methode">
       <summary>Méthode et limites</summary>
       <div class="body">
-        <p><b>Données.</b> Registre parcellaire graphique (RPG) 2019 à 2025, zones humides, aires de captage, habitats Natura 2000 (DREAL Normandie, CBN), haies (Dispositif national de suivi des bocages). 200 356 prairies permanentes 2025 notées.</p>
-        <p><b>Conversion présumée.</b> Une prairie permanente dont plus de la moitié est déclarée en culture la campagne suivante, d'après les déclarations PAC (sans constat de terrain). Contrôle de qualité : 80 à 87 % de ces parcelles sont encore cultivées deux ans après, 10 à 19 % reviennent en herbe.</p>
-        <p><b>Modèle.</b> Régression logistique calibrée, testée sur des campagnes jamais vues. Les 10 % de prairies les plus à risque contiennent 25 % des conversions présumées à deux ans (données 2023, campagne 2024 → 2025), contre 17 % avec l'historique des conversions 2019-2023 dans la maille de 1 km. Le modèle surestime les risques les plus élevés (5,8 % prévus, 3,7 % observés).</p>
-        <p><b>À quelle échelle croire la prévision ?</b> Règle fixée avant le test : le modèle n'est affiché que s'il bat l'historique d'au moins 0,05 de corrélation. Il ne le bat à aucune échelle agrégée, donc la carte montre l'historique observé. La prévision 2027 reste visible par interco, à titre indicatif.</p>
-        <div style="overflow-x:auto">
-          <table class="t">
-            <thead><tr><th>Échelle</th><th>Unités</th><th>Modèle</th><th>Historique</th></tr></thead>
-            <tbody>
-              <tr><td>Commune</td><td>1 983</td><td>0,22</td><td class="win">0,29</td></tr>
-              <tr><td>Maille 10 km</td><td>318</td><td>0,44</td><td class="win">0,59</td></tr>
-              <tr><td>Interco</td><td>67</td><td>0,58</td><td class="win">0,70</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <p class="foot">Corrélation de rang (Spearman) entre taux prévu et taux observé en 2025, avec ce qui était connu fin 2024.</p>
-        <p><b>Priorité.</b> Niveau 1 : prairie dans les 10 % les plus à risque et en zone humide, aire de captage ou habitat Natura 2000 (au moins 25 % de sa surface). Niveau 2 : niveau 1 et un second enjeu, haies comprises. Les haies seules ne suffisent pas : 60 % des prairies du bocage de l'ouest en sont bordées.</p>
-        <p><b>Sensibilité.</b> Retirer les aires de captage change la moitié des 50 mailles prioritaires ; retirer zones humides ou Natura 2000 en change moins de 10 %. Les priorités dépendent donc surtout de l'eau potable.</p>
-        <p><b>Ce que la carte ne montre pas.</b> Aucune donnée à la parcelle n'est publiée. Pas de prévision à la commune (corrélation 0,22, trop faible). Un maintien des prairies peut venir du terrain (marais, pente) autant que des pratiques.</p>
+        <p><b>Les données.</b> Déclarations PAC 2015-2025 (IGN), zones humides, aires de captage d'eau potable, habitats Natura 2000 et haies. Toutes publiques.</p>
+        <p><b>Conversion présumée.</b> Prairie dont plus de la moitié est déclarée en culture l'année suivante. C'est une déclaration, pas un constat de terrain ; 82 % de ces prairies sont encore cultivées deux ans après.</p>
+        <p><b>Prairies prioritaires.</b> Parmi les 10 % de prairies les plus menacées selon le modèle, celles situées en zone humide, aire de captage ou habitat Natura 2000 (niveau 1). Niveau 2 : avec au moins un second enjeu, haies comprises.</p>
+        <p><b>Fiabilité.</b> Testé sur une année qu'il n'avait jamais vue, le modèle retrouve 26 % des conversions dans les 10 % de prairies qu'il signale, contre 17 % en se fiant au passé du secteur. Pour comparer les territoires, en revanche, le passé fait mieux : c'est lui que montre la vue « Où a-t-on converti ? ». L'estimation 2027 par interco est indicative.</p>
+        <p><b>Limites.</b> Aucune donnée n'est publiée prairie par prairie, ni d'estimation par commune. Les habitats Natura 2000 ne sont connus que pour le Calvados, la Manche et l'Orne.</p>
       </div>
     </details>
-    <p class="foot">Datathon de Normandie 2026 · données ouvertes · calculs reproductibles.</p>
+    <p class="foot">Datathon de Normandie 2026 · Sara CHEKLAT et Mariem GAALICHE · données ouvertes, calculs reproductibles · <a href="https://github.com/sarayaouk/prairie_vigie" target="_blank" rel="noopener" style="color:var(--accent)">code et données</a></p>
   </aside>
 
   <div class="mapwrap">
@@ -225,11 +212,11 @@ table.t td.win { font-weight: 600; color: var(--accent); }
   const D = window.PV;
   const ANS = ["2019→20", "2020→21", "2021→22", "2022→23", "2023→24", "2024→25"];
   const fr = (v, d = 0) => v == null || isNaN(v) ? "–" : v.toLocaleString("fr-FR", { minimumFractionDigits: d, maximumFractionDigits: d });
-  const pct = (v, d = 1) => v == null || isNaN(v) ? "–" : fr(v * 100, d) + " %";
+  const pct = (v, d = 1) => v == null || isNaN(v) ? "–" : (v > 0 && v * 100 < 0.5 * Math.pow(10, -d) ? "< " + fr(Math.pow(10, -d), d) + " %" : fr(v * 100, d) + " %");
   const sum = a => a.reduce((s, x) => s + (x || 0), 0);
   const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
   const ramp = fam => [0, 1, 2, 3, 4].map(i => css(`--${fam}-${i}`));
-  const ENJ = { zh: "zones humides", ca: "aires de captage", n2: "habitats Natura 2000", hb: "contour bordé de haies" };
+  const ENJ = { zh: "zones humides", ca: "aires de captage", n2: "habitats Natura 2000", hb: "bordées de haies" };
 
   const LAYERS = { commune: D.communes, interco: D.intercos, maille: D.mailles };
   const INTERCO_NAME = {};
@@ -238,32 +225,32 @@ table.t td.win { font-weight: 600; color: var(--accent); }
   const MODES = {
     prio: {
       scales: [["interco", "Intercos"], ["maille", "Mailles 10 km"]],
-      lede: "Hectares de prairies à la fois parmi les 10 % les plus menacées et en zone d'enjeu eau ou biodiversité. C'est là qu'un contact avec les exploitants a le plus de chances de compter.",
+      lede: "Hectares de prairies très menacées et situées en zone humide, aire de captage d'eau potable ou habitat Natura 2000 : là où agir en premier.",
       fam: "soil",
       value: (p) => p.p1,
-      title: () => "Hectares prioritaires (niveau 1)",
+      title: () => "Prairies prioritaires, niveau 1",
       fmt: v => fr(v) + " ha",
       nd: null
     },
     obs: {
       scales: [["interco", "Intercos"], ["commune", "Communes"]],
-      lede: "Part des prairies permanentes converties en culture (conversions présumées) sur six campagnes, 2019 à 2025. À ces échelles, l'historique prédit mieux 2025 que le modèle : c'est donc lui qu'on affiche.",
+      lede: "Part des prairies devenues des champs entre 2019 et 2025.",
       fam: "soil",
       value: (p, s) => {
         const min = s === "commune" ? 100 : 500;
         if (p.ha == null || p.ha < min) return null;
         return sum(p.cv) / p.ha;
       },
-      title: () => "Part des prairies converties, 6 campagnes",
+      title: () => "Part des prairies devenues des champs, 2019‑2025",
       fmt: v => pct(v),
       nd: s => s === "commune" ? "moins de 100 ha de prairies" : "moins de 500 ha de prairies en Normandie"
     },
     enj: {
       scales: [["commune", "Communes"], ["interco", "Intercos"]],
-      lede: "Part de la surface en prairie permanente 2025 concernée par un enjeu. Ce sont des faits mesurés, sans prévision.",
+      lede: "Part des prairies situées dans chaque zone d'enjeu.",
       fam: "water",
       value: (p, s) => (p.ha && p[state.enjeu] != null) ? p[state.enjeu] / p.ha : null,
-      title: () => "Part des prairies 2025 · " + ENJ[state.enjeu],
+      title: () => "Part des prairies · " + ENJ[state.enjeu],
       fmt: v => pct(v, 0),
       nd: () => "peu ou pas de prairies"
     }
@@ -365,7 +352,7 @@ table.t td.win { font-weight: 600; color: var(--accent); }
 
   function zoomTo(f) {
     const [[x0, y0], [x1, y1]] = path.bounds(f);
-    const k = Math.min(12, 0.75 / Math.max((x1 - x0) / W, (y1 - y0) / H));
+    const k = Math.min(12, 0.6 / Math.max((x1 - x0) / W, (y1 - y0) / H));
     const t = d3.zoomIdentity.translate(W / 2, H / 2).scale(k).translate(-(x0 + x1) / 2, -(y0 + y1) / 2);
     svg.transition().duration(matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 650).call(zoom.transform, t);
   }
@@ -382,12 +369,12 @@ table.t td.win { font-weight: 600; color: var(--accent); }
     cv.forEach((v, i) => {
       const x = left + i * bw;
       s += `<rect x="${x + bw * 0.12}" y="${y(v)}" width="${bw * 0.36}" height="${Math.max(0, y(0) - y(v))}" fill="var(--soil-3)"><title>${ANS[i]} : ${fr(v, 1)} ha convertis</title></rect>`;
-      s += `<rect x="${x + bw * 0.5}" y="${y(cr[i])}" width="${bw * 0.36}" height="${Math.max(0, y(0) - y(cr[i]))}" fill="var(--accent)"><title>${ANS[i]} : ${fr(cr[i], 1)} ha créés</title></rect>`;
+      s += `<rect x="${x + bw * 0.5}" y="${y(cr[i])}" width="${bw * 0.36}" height="${Math.max(0, y(0) - y(cr[i]))}" fill="var(--accent)"><title>${ANS[i]} : ${fr(cr[i], 1)} ha recréés</title></rect>`;
       s += `<text x="${x + bw * 0.49}" y="${h - 6}" text-anchor="middle">${ANS[i].slice(2)}</text>`;
     });
     s += `<line x1="0" x2="${w}" y1="${y(0)}" y2="${y(0)}" stroke="var(--muted)"/>`;
     return `<svg class="bars" viewBox="0 0 ${w} ${h}" role="img" aria-label="Hectares convertis et créés par campagne">${s}</svg>
-      <div class="legend-inline"><span><i class="sw" style="background:var(--soil-3)"></i>convertis</span><span><i class="sw" style="background:var(--accent)"></i>créés</span></div>`;
+      <div class="legend-inline"><span><i class="sw" style="background:var(--soil-3)"></i>convertis</span><span><i class="sw" style="background:var(--accent)"></i>recréés</span></div>`;
   }
 
   function enjeuxKV(p) {
@@ -401,14 +388,13 @@ table.t td.win { font-weight: 600; color: var(--accent); }
     return `<div class="card">
       <h2>Normandie</h2>
       <dl class="kv">
-        <dt>Prairies permanentes notées en 2025</dt><dd class="big">200 356</dd>
-        <dt>Converties en culture (présumé), 2019 à 2025</dt><dd class="big">${fr(tot)} ha</dd>
-        <dt>Créées sur la même période</dt><dd>${fr(gain)} ha</dd>
-        <dt>Remplacées par du maïs</dt><dd>69 % des cas</dd>
-        <dt>Prioritaires niveau 1 pour 2027</dt><dd class="big">12 354 ha</dd>
+        <dt>Devenues des champs, 2019‑2025</dt><dd class="big">${fr(tot)} ha</dd>
+        <dt>Recréées sur la même période</dt><dd>${fr(gain)} ha</dd>
+        <dt>Remplacées par du maïs</dt><dd>7 sur 10</dd>
+        <dt>Prairies prioritaires pour 2027</dt><dd class="big">12 354 ha</dd>
         <dt>dont niveau 2 (deux enjeux ou plus)</dt><dd>6 466 ha</dd>
       </dl>
-      <p class="note">Cliquez sur une zone de la carte ou cherchez une commune pour voir son détail.</p>
+      <p class="note">Cliquez sur la carte ou cherchez une commune.</p>
     </div>`;
   }
 
@@ -422,33 +408,32 @@ table.t td.win { font-weight: 600; color: var(--accent); }
       h = `<h2>${p.n}</h2><div class="sub">Commune ${p.c} · ${INTERCO_NAME[p.e] || ""}</div>
         <dl class="kv">
           <dt>Prairies permanentes 2025</dt><dd class="big">${p.ha == null ? "trop peu pour publier" : fr(p.ha) + " ha"}</dd>
-          <dt>Converties, 6 campagnes</dt><dd class="big">${fr(cv, 1)} ha</dd>
-          <dt>Créées, 6 campagnes</dt><dd>${fr(cr, 1)} ha</dd>
+          <dt>Devenues des champs, 2019‑2025</dt><dd class="big">${fr(cv, 1)} ha</dd>
+          <dt>Recréées, 2019‑2025</dt><dd>${fr(cr, 1)} ha</dd>
           ${p.ha >= 100 ? `<dt>Part convertie</dt><dd>${pct(cv / p.ha)}</dd>` : ""}
           ${enjeuxKV(p)}
         </dl>${barsSVG(p.cv, p.cr)}
-        <p class="note">Pas de prévision à l'échelle de la commune : elle ne serait pas fiable (corrélation de 0,22 avec ce qui s'est passé).</p>`;
+        `;
     } else if (scale === "interco") {
       const cv = sum(p.cv), moy = cv / 6;
-      const prev = p.att != null ? `<dt>Prévision du modèle, campagne 2027</dt><dd>${fr(p.att)} ha <span style="color:var(--muted)">(${fr(p.lo)} – ${fr(p.hi)})</span></dd>` : "";
-      h = `<h2>${p.n}</h2><div class="sub">Partie normande · SIREN ${p.e}</div>
+      const prev = p.att != null ? `<dt>Estimation 2027 (indicative)</dt><dd>${fr(p.att)} ha <span style="color:var(--muted)">(${fr(p.lo)} – ${fr(p.hi)})</span></dd>` : "";
+      h = `<h2>${p.n}</h2><div class="sub">Intercommunalité (partie normande)</div>
         <dl class="kv">
           <dt>Prairies permanentes 2025</dt><dd class="big">${fr(p.ha)} ha</dd>
-          <dt>Prioritaires niveau 1</dt><dd class="big">${fr(p.p1)} ha</dd>
+          <dt>Prairies prioritaires</dt><dd class="big">${fr(p.p1)} ha</dd>
           <dt>dont niveau 2</dt><dd>${fr(p.p2)} ha</dd>
-          <dt>Converties, 6 campagnes</dt><dd>${fr(cv)} ha · ${p.ha >= 500 ? pct(cv / p.ha) : "–"}</dd>
-          <dt>Moyenne observée par campagne</dt><dd>${fr(moy)} ha</dd>
+          <dt>Devenues des champs, 2019‑2025</dt><dd>${fr(cv)} ha · ${p.ha >= 500 ? pct(cv / p.ha) : "–"}</dd>
+          <dt>Moyenne par an</dt><dd>${fr(moy)} ha</dd>
           ${prev}
           ${enjeuxKV(p)}
-        </dl>${barsSVG(p.cv, p.cr)}
-        <p class="note warn">La prévision est donnée à titre indicatif : à l'échelle des intercos, la moyenne observée a mieux anticipé 2025 que le modèle (0,70 contre 0,58).</p>`;
+        </dl>${barsSVG(p.cv, p.cr)}`;
     } else {
-      h = `<h2>Maille de 10 km</h2><div class="sub">Carré Lambert 93 · ${p.m.replace("_", " / ")}</div>
+      h = `<h2>Maille de 10 km</h2>
         <dl class="kv">
           <dt>Prairies permanentes 2025</dt><dd class="big">${fr(p.ha)} ha</dd>
-          <dt>Prioritaires niveau 1</dt><dd class="big">${fr(p.p1, 1)} ha</dd>
+          <dt>Prairies prioritaires</dt><dd class="big">${fr(p.p1, 1)} ha</dd>
           <dt>dont niveau 2</dt><dd>${fr(p.p2, 1)} ha</dd>
-          <dt>Parmi les 10 % les plus à risque</dt><dd>${fr(p.t10, 1)} ha</dd>
+          <dt>Très menacées (10 % les plus à risque)</dt><dd>${fr(p.t10, 1)} ha</dd>
           ${enjeuxKV(p)}
         </dl>`;
     }
@@ -520,7 +505,7 @@ table.t td.win { font-weight: 600; color: var(--accent); }
       const x = i * bw;
       const isReg = b.t === "2023->2024";
       s += `<rect x="${x + bw * 0.14}" y="${y(b.conv)}" width="${bw * 0.42}" height="${y(0) - y(b.conv)}" fill="var(--soil-3)"><title>${ANS[i]} : ${fr(b.conv)} ha convertis</title></rect>`;
-      s += `<rect x="${x + bw * 0.58}" y="${y(b.gain)}" width="${bw * 0.26}" height="${y(0) - y(b.gain)}" fill="var(--accent)"><title>${ANS[i]} : ${fr(b.gain)} ha créés</title></rect>`;
+      s += `<rect x="${x + bw * 0.58}" y="${y(b.gain)}" width="${bw * 0.26}" height="${y(0) - y(b.gain)}" fill="var(--accent)"><title>${ANS[i]} : ${fr(b.gain)} ha recréés</title></rect>`;
       s += `<text x="${x + bw * 0.35}" y="${y(b.conv) - 4}" text-anchor="middle" style="fill:${isReg ? 'var(--hi)' : 'var(--ink)'}">${fr(b.conv / 1000, 1)}k${isReg ? '*' : ''}</text>`;
       s += `<text x="${x + bw / 2}" y="${h - 6}" text-anchor="middle">${ANS[i]}</text>`;
     });
