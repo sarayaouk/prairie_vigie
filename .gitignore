@@ -1,0 +1,12 @@
+cache_rpg/
+cache_enjeux/
+sorties_prairies/
+*.parquet
+*_PRIVE*
+*_INTERNE*
+*.zip
+publiable/
+.ipynb_checkpoints/
+__pycache__/
+.venv/
+.DS_Store
